@@ -1,17 +1,15 @@
 import { Router } from "express";
 const router = Router();
-var body;
+var info;
 router.post("/", async (req, res) => {
-  body = req.body;
+  info = await req.body;
   return res.send({ error: false });
 });
-
-router.get("/", async (req, res) => {
-  if (body) {
-    return res.send(body);
+router.get("/:messageId", async (req, res) => {
+  if (info) {
+    return res.send(info);
   } else {
-    return res.send("Try authenticating first");
+    return res.send("Try logging in first");
   }
 });
-
 export default router;
