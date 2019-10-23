@@ -5,7 +5,7 @@ router.post("/", async (req, res) => {
   info = await req.body;
   return res.send({ error: false });
 });
-router.get("/:messageId", async (req, res) => {
+router.get("/", async (req, res) => {
   if (info) {
     return res.send(info);
   } else {
