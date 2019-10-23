@@ -19,6 +19,7 @@ app.use(async (req, res, next) => {
 app.use("/session", routes.session);
 app.use("/user", routes.user);
 app.use("/message", routes.message);
+app.use("/facebook", routes.facebook);
 app.get("/hello", (req, res) => {
   return res.send("hello");
 });
