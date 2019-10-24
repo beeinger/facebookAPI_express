@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       userID: info.userID,
       accessToken: info.accessToken
     };
-    importFacebook(user.userID, user.accessToken, done());
+    importFacebook(user.userID, user.accessToken, done);
   }
   return res.send(info);
 });
