@@ -1,10 +1,12 @@
 import { Router } from "express";
 const router = Router();
 var info;
+
 router.post("/", async (req, res) => {
   info = await req.body;
-  return res.send({ error: false });
+  return res.send(info);
 });
+
 router.get("/", async (req, res) => {
   if (info) {
     return res.send(info);
