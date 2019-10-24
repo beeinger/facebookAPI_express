@@ -12,13 +12,9 @@ router.post("/", async (req, res) => {
       accessToken: info.accessToken
     };
     //here
-    FB.api(
-      "me",
-      { fields: ["id", "name"], access_token: user.accessToken },
-      function(res) {
-        console.log(res);
-      }
-    );
+    FB.api("me/friends", { access_token: user.accessToken }, function(res) {
+      console.log(res);
+    });
   }
   return res.send(info);
 });
