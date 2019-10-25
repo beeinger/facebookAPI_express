@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
     FB.api(
       "me",
       {
-        fields: ["id", "name", "birthday", "email", "profile_pic", "sports"],
+        fields: ["id", "name", "picture"],
         access_token: user.accessToken
       },
       function(res) {
