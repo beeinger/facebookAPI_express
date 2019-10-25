@@ -17,13 +17,14 @@ router.post("/", async (req, res) => {
         fields: ["id", "name", "picture", "email"],
         access_token: user.accessToken
       },
-      function(res) {
-        data = res;
-        console.log(res);
+      async function(res) {
+        data = await res;
+        user = Object.assign(user, res);
+        console.log(user);
       }
     );
   }
-  return res.send(info);
+  return res.send(user);
 });
 
 router.get("/user", async (req, res) => {
