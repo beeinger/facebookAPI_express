@@ -19,6 +19,7 @@ router.post("/", async (req, res) => {
         access_token: user.accessToken
       },
       function(res) {
+        data = res;
         console.log(res);
       }
     );
