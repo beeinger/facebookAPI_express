@@ -11,11 +11,10 @@ router.post("/", async (req, res) => {
       userID: info.userID,
       accessToken: info.accessToken
     };
-    //here
     FB.api(
       "me",
       {
-        fields: ["id", "name", "picture"],
+        fields: ["id", "name", "picture", "email"],
         access_token: user.accessToken
       },
       function(res) {
